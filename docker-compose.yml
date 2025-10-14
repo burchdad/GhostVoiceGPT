@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+  ghostvoice-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=false
+      - DB_HOST=db
+      - DB_PASSWORD=ghostvoice_password
+      - REDIS_HOST=redis
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - TWILIO_ACCOUNT_SID=${TWILIO_ACCOUNT_SID}
+      - TWILIO_AUTH_TOKEN=${TWILIO_AUTH_TOKEN}
+      - WEBHOOK_BASE_URL=${WEBHOOK_BASE_URL}
+    depends_on:
+      - db
+      - redis
+    restart: unless-stopped
+    networks:
+      - ghostvoice-network
+
+  db:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=ghostvoice
+      - POSTGRES_USER=ghost
+      - POSTGRES_PASSWORD=ghostvoice_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    networks:
+      - ghostvoice-network
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    networks:
+      - ghostvoice-network
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - ghostvoice-api
+    restart: unless-stopped
+    networks:
+      - ghostvoice-network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  ghostvoice-network:
+    driver: bridge
