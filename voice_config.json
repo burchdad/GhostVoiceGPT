@@ -1,0 +1,281 @@
+{
+  "voice_profiles": {
+    "adam": {
+      "voice_id": "pNInz6obpgDQGcFmaJgB",
+      "name": "Adam",
+      "gender": "male",
+      "accent": "american",
+      "personality": "deep_authoritative_confident",
+      "languages": [
+        "en-US",
+        "en-GB"
+      ],
+      "recommended_for": [
+        "business",
+        "professional",
+        "narrator",
+        "authoritative"
+      ],
+      "settings": {
+        "stability": 0.7,
+        "similarity_boost": 0.8,
+        "style": 0.1,
+        "use_speaker_boost": true
+      }
+    },
+    "antoni": {
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "name": "Antoni",
+      "gender": "male",
+      "accent": "american",
+      "personality": "warm_conversational_friendly",
+      "languages": [
+        "en-US"
+      ],
+      "recommended_for": [
+        "conversational",
+        "casual",
+        "podcasts",
+        "friendly"
+      ],
+      "settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "style": 0.2,
+        "use_speaker_boost": true
+      }
+    },
+    "daniel": {
+      "voice_id": "onwK4e9ZLuTAKqWW03F9",
+      "name": "Daniel",
+      "gender": "male",
+      "accent": "british",
+      "personality": "refined_professional_narrator",
+      "languages": [
+        "en-GB",
+        "en-US"
+      ],
+      "recommended_for": [
+        "british",
+        "narrator",
+        "educational",
+        "sophisticated"
+      ],
+      "settings": {
+        "stability": 0.8,
+        "similarity_boost": 0.85,
+        "style": 0.0,
+        "use_speaker_boost": true
+      }
+    },
+    "giovanni": {
+      "voice_id": "zcAOhNBS3c14rBihAFp1",
+      "name": "Giovanni",
+      "gender": "male",
+      "accent": "italian",
+      "personality": "warm_expressive_romantic",
+      "languages": [
+        "it-IT",
+        "en-US",
+        "es-ES",
+        "fr-FR"
+      ],
+      "recommended_for": [
+        "multilingual",
+        "romantic",
+        "expressive",
+        "italian"
+      ],
+      "settings": {
+        "stability": 0.6,
+        "similarity_boost": 0.8,
+        "style": 0.3,
+        "use_speaker_boost": true
+      }
+    },
+    "josh": {
+      "voice_id": "TxGEqnHWrfWFTfGW9XjX",
+      "name": "Josh",
+      "gender": "male",
+      "accent": "american",
+      "personality": "calm_steady_reliable",
+      "languages": [
+        "en-US"
+      ],
+      "recommended_for": [
+        "narrator",
+        "calm",
+        "educational",
+        "reliable"
+      ],
+      "settings": {
+        "stability": 0.8,
+        "similarity_boost": 0.75,
+        "style": 0.1,
+        "use_speaker_boost": true
+      }
+    },
+    "sam": {
+      "voice_id": "yoZ06aMxZJJ28mfd3POQ",
+      "name": "Sam",
+      "gender": "male",
+      "accent": "american",
+      "personality": "casual_friendly_everyday",
+      "languages": [
+        "en-US"
+      ],
+      "recommended_for": [
+        "casual",
+        "friendly",
+        "everyday",
+        "approachable"
+      ],
+      "settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.7,
+        "style": 0.2,
+        "use_speaker_boost": true
+      }
+    },
+    "rachel": {
+      "voice_id": "21m00Tcm4TlvDq8ikWAM",
+      "name": "Rachel",
+      "gender": "female",
+      "accent": "american",
+      "personality": "calm_professional_confident",
+      "languages": [
+        "en-US",
+        "en-GB",
+        "en-AU"
+      ],
+      "recommended_for": [
+        "business",
+        "professional",
+        "assistant",
+        "confident"
+      ],
+      "settings": {
+        "stability": 0.6,
+        "similarity_boost": 0.8,
+        "style": 0.1,
+        "use_speaker_boost": true
+      }
+    },
+    "bella": {
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "name": "Bella",
+      "gender": "female",
+      "accent": "american",
+      "personality": "warm_friendly_empathetic",
+      "languages": [
+        "en-US",
+        "en-CA"
+      ],
+      "recommended_for": [
+        "conversational",
+        "friendly",
+        "warm",
+        "empathetic"
+      ],
+      "settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "style": 0.2,
+        "use_speaker_boost": true
+      }
+    },
+    "elli": {
+      "voice_id": "MF3mGyEYCl7XYWbV9V6O",
+      "name": "Elli",
+      "gender": "female",
+      "accent": "american",
+      "personality": "energetic_bubbly_youthful",
+      "languages": [
+        "en-US"
+      ],
+      "recommended_for": [
+        "youth",
+        "energetic",
+        "bubbly",
+        "entertainment"
+      ],
+      "settings": {
+        "stability": 0.4,
+        "similarity_boost": 0.7,
+        "style": 0.3,
+        "use_speaker_boost": true
+      }
+    },
+    "alice": {
+      "voice_id": "Xb7hH8MSUJpSbSDYk0k2",
+      "name": "Alice",
+      "gender": "female",
+      "accent": "british",
+      "personality": "refined_elegant_sophisticated",
+      "languages": [
+        "en-GB",
+        "en-US"
+      ],
+      "recommended_for": [
+        "british",
+        "elegant",
+        "sophisticated",
+        "refined"
+      ],
+      "settings": {
+        "stability": 0.7,
+        "similarity_boost": 0.8,
+        "style": 0.1,
+        "use_speaker_boost": true
+      }
+    },
+    "domi": {
+      "voice_id": "AZnzlk1XvdvUeBnXmlld",
+      "name": "Domi",
+      "gender": "female",
+      "accent": "american",
+      "personality": "strong_confident_assertive",
+      "languages": [
+        "en-US"
+      ],
+      "recommended_for": [
+        "leadership",
+        "confident",
+        "strong",
+        "assertive"
+      ],
+      "settings": {
+        "stability": 0.6,
+        "similarity_boost": 0.8,
+        "style": 0.2,
+        "use_speaker_boost": true
+      }
+    },
+    "matilda": {
+      "voice_id": "XrExE9yKIg1WjnnlVkGX",
+      "name": "Matilda",
+      "gender": "female",
+      "accent": "american",
+      "personality": "clear_versatile_multilingual",
+      "languages": [
+        "en-US",
+        "es-ES",
+        "fr-FR",
+        "de-DE",
+        "pt-BR"
+      ],
+      "recommended_for": [
+        "multilingual",
+        "clear",
+        "versatile",
+        "international"
+      ],
+      "settings": {
+        "stability": 0.6,
+        "similarity_boost": 0.75,
+        "style": 0.1,
+        "use_speaker_boost": true
+      }
+    }
+  }
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎤 ElevenLabs Voice Test - Mobile</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 20px;
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .voice-section {
+            background: #2a2a2a;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #444;
+        }
+        .voice-title {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #4CAF50;
+        }
+        audio {
+            width: 100%;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+        .file-info {
+            font-size: 0.9em;
+            color: #888;
+            margin: 5px 0;
+        }
+        .status {
+            background: #333;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎤 ElevenLabs Voice Test</h1>
+        <div class="status">
+            <strong>✅ Server Running</strong><br>
+            Testing ElevenLabs TTS Integration
+        </div>
+    </div>
+
+    <div class="voice-section">
+        <div class="voice-title">👨 Stephen Persona (Rachel Voice)</div>
+        <audio controls preload="metadata">
+            <source src="demo_stephen.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="file-info">📁 demo_stephen.mp3 (105KB)</div>
+    </div>
+
+    <div class="voice-section">
+        <div class="voice-title">👩 Nova Persona (Bella Voice)</div>
+        <audio controls preload="metadata">
+            <source src="demo_nova.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="file-info">📁 demo_nova.mp3 (133KB)</div>
+    </div>
+
+    <div class="voice-section">
+        <div class="voice-title">🧚 Sugar Persona (Elli Voice)</div>
+        <audio controls preload="metadata">
+            <source src="demo_sugar.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="file-info">📁 demo_sugar.mp3 (112KB)</div>
+    </div>
+
+    <div class="voice-section">
+        <div class="voice-title">🔧 Additional Test Files</div>
+        
+        <strong>Quick Test:</strong>
+        <audio controls preload="metadata">
+            <source src="quick_test.mp3" type="audio/mpeg">
+        </audio>
+        <div class="file-info">📁 quick_test.mp3 (33KB)</div>
+        
+        <strong>Debug Tests:</strong>
+        <audio controls preload="metadata">
+            <source src="debug_test_1.mp3" type="audio/mpeg">
+        </audio>
+        <div class="file-info">📁 debug_test_1.mp3 (46KB)</div>
+    </div>
+
+    <script>
+        // Log any audio loading issues
+        document.querySelectorAll('audio').forEach(audio => {
+            audio.addEventListener('error', function(e) {
+                console.error('Audio error:', e);
+            });
+            audio.addEventListener('loadstart', function() {
+                console.log('Loading:', this.src);
+            });
+            audio.addEventListener('canplay', function() {
+                console.log('Ready to play:', this.src);
+            });
+        });
+    </script>
+</body>
+</html>
