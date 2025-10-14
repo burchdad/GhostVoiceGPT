@@ -50,10 +50,12 @@ async def debug_elevenlabs_audio():
                 )
                 
                 # Handle the audio data
-                if hasattr(audio, '__iter__') and not isinstance(audio, (str, bytes)):
+                if hasattr(audio, '__iter__') and not isinstance(audio, (str, bytes, bytearray, memoryview)):
                     audio_bytes = b''.join(audio)
+                elif isinstance(audio, (bytearray, memoryview)):
+                    audio_bytes = bytes(audio)
                 else:
-                    audio_bytes = audio if isinstance(audio, bytes) else bytes(audio)
+                    audio_bytes = audio if isinstance(audio, bytes) else b''.join(audio)
                 
                 print(f"   ✅ Generated {len(audio_bytes)} bytes")
                 

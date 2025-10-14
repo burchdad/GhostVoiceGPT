@@ -4,25 +4,33 @@ Enhanced voice management for GhostVoiceGPT
 """
 
 import os
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Tuple, Any, Union
 from dataclasses import dataclass
 
+# Handle ElevenLabs imports with proper typing
 try:
+    import elevenlabs
     from elevenlabs import ElevenLabs, Voice, VoiceSettings
     ELEVENLABS_AVAILABLE = True
+    
+    # Use the actual types when available  
+    ElevenLabsType = ElevenLabs  # type: ignore
+    VoiceType = Voice  # type: ignore
+    VoiceSettingsType = VoiceSettings  # type: ignore
+    
 except ImportError:
     print("ElevenLabs package not found. Install with: pip install elevenlabs")
     ELEVENLABS_AVAILABLE = False
     
-    # Create dummy classes for type hints
-    class ElevenLabs:
-        def __init__(self, api_key): pass
-        def generate(self, **kwargs): return []
+    # Create dummy types for when package not available
+    class ElevenLabsType:  # type: ignore
+        def __init__(self, api_key: str): pass
+        def generate(self, **kwargs) -> List[bytes]: return []
     
-    class Voice:
-        def __init__(self, voice_id, settings=None): pass
+    class VoiceType:  # type: ignore
+        def __init__(self, voice_id: str, settings: Any = None): pass
     
-    class VoiceSettings:
+    class VoiceSettingsType:  # type: ignore
         def __init__(self, **kwargs): pass
 
 @dataclass
@@ -47,7 +55,8 @@ class AdvancedVoiceManager:
     """Advanced voice management with multilingual support"""
     
     def __init__(self, api_key: str):
-        self.client = ElevenLabs(api_key=api_key)
+        # Initialize ElevenLabs client
+        self.client = ElevenLabsType(api_key=api_key)
         self.voice_library = self._initialize_voice_library()
         
     def _initialize_voice_library(self) -> Dict[str, VoiceConfig]:
@@ -218,7 +227,7 @@ class AdvancedVoiceManager:
             print(f"Supported languages: {voice_config.languages}")
         
         # Apply custom settings or use defaults
-        settings = VoiceSettings(
+        settings = VoiceSettingsType(
             stability=custom_settings.get('stability', voice_config.stability) if custom_settings else voice_config.stability,
             similarity_boost=custom_settings.get('similarity_boost', voice_config.similarity_boost) if custom_settings else voice_config.similarity_boost,
             style=custom_settings.get('style', voice_config.style) if custom_settings else voice_config.style,
@@ -232,7 +241,7 @@ class AdvancedVoiceManager:
         
         audio = self.client.generate(
             text=text,
-            voice=Voice(voice_id=voice_config.voice_id, settings=settings),
+            voice=VoiceType(voice_id=voice_config.voice_id, settings=settings),
             model="eleven_multilingual_v2"  # Use multilingual model
         )
         
